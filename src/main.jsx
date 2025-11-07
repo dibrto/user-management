@@ -1,14 +1,6 @@
 import { createRoot } from 'react-dom/client'
-import Header from './components/Header'
-import UserList from './components/UserList'
-import Footer from './components/Footer'
+import App from './App';
 
 createRoot(document.getElementById('root')).render(
-    <>
-        <Header />
-
-        <UserList />
-
-        <Footer />
-    </>
-)
+    <App />
+);
