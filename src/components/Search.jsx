@@ -1,6 +1,8 @@
+import styles from "./Search.module.css";
+
 export default function Search() {
     return (
-        <div className="search-form">
+        <div className={styles["search-form"]}>
             <h2>
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user"
                     className="svg-inline--fa fa-user SearchBar_icon__cXpTg" role="img"
