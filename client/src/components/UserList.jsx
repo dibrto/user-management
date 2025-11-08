@@ -18,8 +18,8 @@ export default function UserList() {
                 <thead>
                     <tr>
                         <th>Image</th>
-                        <th>
-                            First name<svg aria-hidden="true" focusable="false" data-prefix="fas"
+                        <th>First name
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
                                 data-icon="arrow-down" className={`${styles["icon"]} svg-inline--fa fa-arrow-down Table_icon__+HHgn`}
                                 role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                                 <path fill="currentColor"
@@ -27,8 +27,8 @@ export default function UserList() {
                                 </path>
                             </svg>
                         </th>
-                        <th>
-                            Last name<svg aria-hidden="true" focusable="false" data-prefix="fas"
+                        <th>Last name
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
                                 data-icon="arrow-down" className={`${styles["icon"]} svg-inline--fa fa-arrow-down Table_icon__+HHgn`}
                                 role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                                 <path fill="currentColor"
@@ -36,8 +36,8 @@ export default function UserList() {
                                 </path>
                             </svg>
                         </th>
-                        <th>
-                            Email<svg aria-hidden="true" focusable="false" data-prefix="fas"
+                        <th>Email
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
                                 data-icon="arrow-down" className={`${styles["icon"]} svg-inline--fa fa-arrow-down Table_icon__+HHgn`}
                                 role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                                 <path fill="currentColor"
@@ -45,8 +45,8 @@ export default function UserList() {
                                 </path>
                             </svg>
                         </th>
-                        <th>
-                            Phone<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down"
+                        <th>Phone
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down"
                                 className={`${styles["icon"]} svg-inline--fa fa-arrow-down Table_icon__+HHgn`} role="img"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                                 <path fill="currentColor"
@@ -54,8 +54,7 @@ export default function UserList() {
                                 </path>
                             </svg>
                         </th>
-                        <th>
-                            Created
+                        <th>Created
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down"
                                className={`${styles["icon"]} ${styles["active-icon"]} svg-inline--fa fa-arrow-down Table_icon__+HHgn`} role="img"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -68,7 +67,7 @@ export default function UserList() {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map( user => <UserItem user={user}/>)}
+                    {users.map(user => <UserItem key={user._id} user={user}/>)}
                 </tbody>
             </table>
         </div>
