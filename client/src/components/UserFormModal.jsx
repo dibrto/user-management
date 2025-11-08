@@ -1,11 +1,36 @@
-export default function UserFormModal({onClose}){
+export default function UserFormModal({onClose, type}){
+
+    // events
+    const saveUserHandler = (e) => {
+        e.preventDefault();
+
+        const {country, city, street, streetNumber, ...formData} = Object.fromEntries(new FormData(e.target));
+        const request = {
+            ...formData
+            , address: {
+                country
+                , city
+                , street
+                , streetNumber
+            }
+            , createdAt: new Date().toISOString()
+            , updatedAt: new Date().toISOString()
+        };
+        
+        fetch("http://localhost:3030/jsonstore/users", {
+            method: "POST"
+            , headers: { "Content-Type": "application/json" }
+            , body: JSON.stringify(request)
+        })
+    };
+
     return (
         <div className="overlay" >
             <div className="backdrop"></div>
             <div className="modal">
                 <div className="user-container">
                     <header className="headers">
-                        <h2>Edit User/Add User</h2>
+                        <h2>{type} user</h2>
                         <button className="btn close" onClick={onClose}>
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark"
                                 className="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -15,7 +40,7 @@ export default function UserFormModal({onClose}){
                             </svg>
                         </button>
                     </header>
-                    <form>
+                    <form onSubmit={saveUserHandler}>
                         <div className="form-row">
                             <div className="form-group">
                                 <label htmlFor="firstName">First name</label>
@@ -93,7 +118,7 @@ export default function UserFormModal({onClose}){
                         </div>
                         <div id="form-actions">
                             <button id="action-save" className="btn" type="submit">Save</button>
-                            <button id="action-cancel" className="btn" type="button" onClick={onClose}>Cancel</button>
+                            <button id="action-cancel" className="btn" type="button">Cancel</button>
                         </div>
                     </form>
                 </div>

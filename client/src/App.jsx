@@ -11,7 +11,7 @@ export default function App() {
     const [showUserCreateModal, setShowUserCreateModal] = useState(false);
 
     // events
-    const toggleUserCreateModal = (e) => setShowUserCreateModal(prev => !prev);
+    const toggleUserCreateModalHandler = (e) => setShowUserCreateModal(prev => !prev);
 
     return (
         <>
@@ -23,8 +23,8 @@ export default function App() {
 
                     <UserList />
 
-                    <button className="btn-add btn" onClick={toggleUserCreateModal}>Add new user</button>
-                    {showUserCreateModal && <UserFormModal onClose= {toggleUserCreateModal}/>}
+                    <button className="btn-add btn" onClick={toggleUserCreateModalHandler}>Add new user</button>
+                    {showUserCreateModal && <UserFormModal onClose={toggleUserCreateModalHandler} type={"Add"}/>}
 
                     <Pagination />
                 </section>        
