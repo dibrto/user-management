@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import UserItem from "./UserItem";
 import styles from "./UserList.module.css";
+import UserItem from "./UserItem";
 
 export default function UserList() {
     const [users, setUsers] = useState([]);

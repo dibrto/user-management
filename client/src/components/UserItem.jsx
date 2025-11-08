@@ -1,4 +1,5 @@
 import styles from "./UserItem.module.css";
+import fromIsoDateUtil from "../utils/fromIsoDateUtil";
 
 export default function UserItem({user}) {
     return (
@@ -8,7 +9,7 @@ export default function UserItem({user}) {
             <td>{user.lastName}</td>
             <td>{user.email}</td>
             <td>{user.phoneNumber}</td>
-            <td>{user.createdAt}</td>
+            <td>{fromIsoDateUtil(user.createdAt)}</td>
 
             <td className={styles["actions"]}>
                 <button className="btn edit-btn" title="Edit">
