@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import styles from "./UserList.module.css";
 import UserItem from "./UserItem";
 
-export default function UserList() {
+export default function UserList(refreshUsers) {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:3030/jsonstore/users")
             .then(res => res.json())
             .then(result => setUsers(x => x = Object.values(result)))
-    }, []);
+    }, [refreshUsers]);
 
     return (
         <div className={styles["table-wrapper"]}>

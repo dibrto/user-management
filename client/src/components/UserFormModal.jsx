@@ -1,4 +1,4 @@
-export default function UserFormModal({onClose, type}){
+export default function UserFormModal({onClose, type, setRefreshUsers}){
 
     // events
     const saveUserHandler = (e) => {
@@ -21,7 +21,10 @@ export default function UserFormModal({onClose, type}){
             method: "POST"
             , headers: { "Content-Type": "application/json" }
             , body: JSON.stringify(request)
-        })
+        });
+
+        setRefreshUsers(prev => !prev);
+        onClose();
     };
 
     return (

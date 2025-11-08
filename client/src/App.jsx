@@ -9,6 +9,7 @@ import UserFormModal from './components/UserFormModal'
 
 export default function App() {
     const [showUserCreateModal, setShowUserCreateModal] = useState(false);
+    const [refreshUsers, setRefreshUsers] = useState(false);
 
     // events
     const toggleUserCreateModalHandler = (e) => setShowUserCreateModal(prev => !prev);
@@ -21,10 +22,16 @@ export default function App() {
                 <section className="card users-container">
                     <Search />
 
-                    <UserList />
+                    <UserList refreshUsers={refreshUsers}/>
 
                     <button className="btn-add btn" onClick={toggleUserCreateModalHandler}>Add new user</button>
-                    {showUserCreateModal && <UserFormModal onClose={toggleUserCreateModalHandler} type={"Add"}/>}
+                    {showUserCreateModal && 
+                        <UserFormModal 
+                            onClose={toggleUserCreateModalHandler} 
+                            type={"Add"}
+                            setRefreshUsers={setRefreshUsers}
+                        />
+                    }
 
                     <Pagination />
                 </section>        
