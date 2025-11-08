@@ -1,6 +1,9 @@
 import styles from "./UserItem.module.css";
 
-export default function UserItem() {
+export default function UserItem(props) {
+    console.log(props);
+    
+
     return (
         <tr>
             <td><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="Peter's profile" className={styles["image"]} /></td>
