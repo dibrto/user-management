@@ -7,9 +7,19 @@ export default function UserList(refreshUsers) {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3030/jsonstore/users")
+        // on mount
+        const abortController = new AbortController();
+        fetch("http://localhost:3030/jsonstore/users", { signal: abortController.signal })
             .then(res => res.json())
             .then(result => setUsers(x => x = Object.values(result)))
+            .catch(err => {
+                if (err.name !== 'AbortError') {
+                    alert(err.message);
+                }
+            });
+
+        // on unmount
+        return () => abortController.abort();
     }, [refreshUsers]);
 
     return (
