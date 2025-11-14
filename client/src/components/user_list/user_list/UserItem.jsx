@@ -1,5 +1,5 @@
 import styles from "./UserItem.module.css";
-import fromIsoDateUtil from "../utils/fromIsoDateUtil";
+import fromIsoDateUtil from "../../../utils/fromIsoDateUtil";
 
 export default function UserItem({user}) {
     return (

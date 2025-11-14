@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-import Header from './components/Header'
-import UserList from './components/UserList'
-import Footer from './components/Footer'
-import Pagination from './components/Pagination'
-import Search from './components/Search'
-import UserFormModal from './components/UserFormModal'
+import Header from './components/header/Header'
+import UserList from './components/user_list/user_list/UserList'
+import Footer from './components/footer/Footer'
+import Pagination from './components/pagination/Pagination'
+import Search from './components/user_list/search/Search'
+import UserFormModal from './components/user_list/user_form_modal/UserFormModal'
 
 export default function App() {
     const [showUserCreateModal, setShowUserCreateModal] = useState(false);
