@@ -4,7 +4,13 @@ import fromIsoDateUtil from "../../../utils/fromIsoDateUtil";
 export default function UserItem({user}) {
     return (
         <tr>
-            <td><img src={user.imageUrl} alt={`${user.firstName}'s profile`} className={styles["image"]} /></td>
+            <td>
+                <img 
+                    src={user.imageUrl || "https://cdn3.vectorstock.com/i/1000x1000/54/17/person-gray-photo-placeholder-man-vector-24005417.jpg"}
+                    alt={`${user.firstName}'s profile`}
+                    className={styles["image"]} 
+                />
+            </td>
             <td>{user.firstName}</td>
             <td>{user.lastName}</td>
             <td>{user.email}</td>
